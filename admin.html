@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>PHP Test</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="lazyLoad.js"></script>
+<script>
+
+var currentPage;
+
+window.onload = function(){
+    getPage();
+}
+
+function getPage()
+{
+  var currentPage;
+  if(window.location.href.indexOf("page") === -1) {
+    window.location.href = "admin.html?page=presentation.html";
+    currentPage= "presentation.html";
+  }
+  else {
+    currentPage= window.location.href.substring(window.location.href.indexOf("=")+1, window.location.href.length);
+  }
+
+
+
+  var buttonsMenu = document.getElementsByClassName("menuButton");
+  for(let i =0; i<buttonsMenu.length;i++)
+  {
+    buttonsMenu[i].classList.remove('isPage')
+  }
+  if(currentPage == 'presentation.html'){
+    buttonsMenu[0].classList.add('isPage');
+  }
+  if(currentPage == 'projets.html'){
+    buttonsMenu[1].classList.add('isPage');
+  }
+  if(currentPage == 'contact.html'){
+    buttonsMenu[2].classList.add('isPage');
+  }
+  var myRequest = new XMLHttpRequest();
+  myRequest.open('GET', currentPage);
+  myRequest.onreadystatechange = function () {
+    if (myRequest.readyState === 4) {
+      document.getElementById('ajax-content').innerHTML = myRequest.responseText;
+      lazy();
+    }
+  };
+  myRequest.send();
+}
+
+function setPage(link) {
+  window.location.href = "admin.html?page="+link+"";
+  getPage();
+}
+
+</script>
+
+</head>
+
+<body>
+<div id="header">
+  <div id="corner" onclick="setPage('presentation.html')">
+    <div id="name">Jean Rimlinger</div>
+    <div id="titre">Game Maker</div>
+  </div>
+  <div id="menu">
+    <div class="menuSpace"></div>
+    <div class="menuButton" onclick="setPage('presentation.html')"><p class="textCenter">Accueil</p></div>
+    <div class="menuSpace"></div>
+    <div class="menuButton" onclick="setPage('projets.html')"><p class="textCenter">Mes projets</p></div>
+    <div class="menuSpace"></div>
+    <div class="menuButton" onclick="setPage('contact.html')"><p class="textCenter">Contact</p></div>
+  </div>
+</div>
+<div id="mainPage">
+  <div id="ajax-content"></div>
+
+
+</div>
+</body>
+</html>
