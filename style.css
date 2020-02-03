@@ -229,7 +229,6 @@ ul{
    display: flex;
    flex-direction: column;
 
-   : 40px;
    justify-content: center;
 }
 
@@ -247,7 +246,7 @@ ul{
 #presentationText{
   padding: 50px;
   text-align: justify;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 object{
