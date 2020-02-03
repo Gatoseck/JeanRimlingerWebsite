@@ -213,6 +213,25 @@ ul{
    transition: all 0.3s ease-out;
    height: auto;
 }
+
+.contact{
+   height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.contactDiv{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 .presentation{
    height: 100%;
    display: flex;
