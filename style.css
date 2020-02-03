@@ -359,10 +359,7 @@ object{
  .myButtonProjet:hover {
      background-color:#415989;
 }
- .myButtonProjet:active {
-     position:relative;
-     top:1px;
-}
+
  .imgText{
   overflow-y: auto;
   margin: 2% 2% 0 0;
