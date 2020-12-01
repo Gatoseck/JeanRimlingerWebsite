@@ -1,6 +1,6 @@
 @font-face {
-     font-family: graphicpixel;
-     src: url(fonts/graphicpixel.ttf);
+     font-family: noto-mono;
+     src: url(fonts/noto-mono.ttf);
 }
 
 @font-face {
@@ -114,7 +114,7 @@ ul{
    display: flex;
    align-items: flex-end;
    font-size: 2rem;
-   font-family: graphicpixel;
+   font-family: noto-mono;
 
 }
 
